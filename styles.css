@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&display=swap');
+
+
+/*
+### Notes
+
+Use transparency to get the colour variations 
+necessary to match the design.
+Hint: look into using `hsla()`.
+*/
+
+:root{
+    /* Colors primary */
+    --clr-pr-l-red: hsl(0, 100%, 67%);
+    --clr-pr-orangeyellow: hsl(39, 100%, 56%);
+    --clr-pr-greenteal: hsl(166, 100%, 37%);
+    --clr-pr-cobaltblue: hsl(234, 85%, 45%);
+
+    /* Colors gradients */
+        /* Backgrounds */
+    --gr-l-slateblue: hsl(252, 100%, 67%);
+    --gr-l-royal-blue: hsl(241, 81%, 54%);
+        /* Circle */
+    --gr-violetblue: hsla(256, 72%, 46%, 1);
+    --gr-persionablue: hsla(241, 72%, 46%, 0);
+
+    /* Colors neutral */
+    --clr-nt-white: hsl(0, 0%, 100%);
+    --clr-nt-paleblue: hsl(221, 100%, 96%);
+    --clr-nt-l-lavender: hsl(241, 100%, 89%);
+    --clr-nt-d-greyblue: hsl(224, 30%, 27%);
+
+    /* Font */
+    --font-size: 18px;
+    --font-family: 'Hanken Grotesk', sans-serif;
+}
+
+body, html{
+    font-family: var(--font-family);
+    font-size: var(--font-size);
+    background-color: var(--clr-nt-paleblue);
+}
+
+main{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.result-card{
+    max-width: 600px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: var(--clr-nt-white);
+    border-radius: 30px;
+}
+
+/* Result section */
+.result{
+    background: linear-gradient(0deg, var(--gr-l-royal-blue) 5%, var(--gr-l-slateblue) 95%);
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px 40px;
+}
+
+.result-h2{
+    color: var(--clr-nt-l-lavender);
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+}
+
+.result-circle{
+    background: linear-gradient(0deg, var(--gr-persionablue) 5%, var(--gr-violetblue) 80%);
+    width: 150px;
+    height: 150px;
+    border-radius: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+.result-circle-number-1{
+    color: var(--clr-nt-white);
+    font-weight: 800;
+    font-size: 3rem;
+}
+.result-circle-number-2{
+    color: var(--clr-nt-l-lavender);
+    font-size: 0.75rem;
+    font-weight: 700;
+    opacity: 0.6;
+    margin-top: -0.75rem;
+}
+
+.result-comment-short{
+    color: var(--clr-nt-white);
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+.result-comment-long{
+    color: var(--clr-nt-l-lavender);
+    text-align: center;
+    font-size: 0.85rem;
+    line-height: 1.2rem;
+}
+
+/* Summary section  */
+.summary{
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+}
+
+.summary-h2{
+    color: var(--clr-nt-d-greyblue);
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.summary-skill-container{
+    background-color: var(--clr-nt-paleblue);
+    padding: 10px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 0.5rem;
+    justify-content: space-between;
+}
+
+.summary-skill-container div{
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+}
+.summary-skill-name{
+    font-weight: 500;
+}
+
+.summary-skill-score{
+    color: hsla(224, 30%, 27%, 0.5);
+    font-weight: 700;
+}
+.summary-skill-score span{
+    color: var(--clr-nt-d-greyblue);
+}
+
+.btn-continue{
+    border-radius: 30px;
+    border-style: none;
+    background-color: var(--clr-nt-d-greyblue);
+    color: var(--clr-nt-paleblue);
+    font-weight: 700;
+    font-size: 0.9rem;
+    padding: 15px;
+    margin-top: 1rem;
+}
+.btn-continue:hover{
+    color: var(--clr-nt-paleblue);
+    cursor: pointer;
+    background: linear-gradient(0deg, var(--gr-l-royal-blue) 5%, var(--gr-l-slateblue) 95%);
+}
+
+.skill1{color: var(--clr-pr-l-red);}
+.skill2{color: var(--clr-pr-orangeyellow);}
+.skill3{color: var(--clr-pr-greenteal);}
+.skill4{color: var(--clr-pr-cobaltblue);}
+
+/* Media queries */
+@media (max-width: 500px) {
+    body,html{
+        font-size: 15px;
+    }
+    main{
+        padding: 1rem;
+    }
+    .result-card{
+        margin-top: 6rem;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+    }
+}
